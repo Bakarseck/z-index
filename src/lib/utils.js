@@ -9,22 +9,18 @@ export const postData = async (url, data) => {
         },
         body: JSON.stringify(data),
       });
-  
-      const jsonData = await response.json(); // Parse JSON regardless of response status
-  
+      const jsonData = await response.json();
+      
       if (!response.ok) {
-        // Check for the unique constraint violation
         if (jsonData.error && jsonData.error.includes('Unique constraint failed')) {
           throw new Error("The email address is already in use.");
         }
-        // Handle other types of errors
         throw new Error(jsonData.message || "An error occurred");
       }
       
       return jsonData;
     } catch (error) {
       console.error("Error in postData:", error);
-      // Re-throw the error to be handled in the calling function
       throw error;
     }
   };

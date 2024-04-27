@@ -24,6 +24,9 @@ export default function LoginPage() {
         toast.success("Registration successful!");
         console.log(response.token);
         setSessionToken(response.token);
+        setTimeout(() => {
+            router.push('/home');
+        }, 1000)
       }
     } catch (error) {
       console.log(error.message);
@@ -52,7 +55,7 @@ export default function LoginPage() {
             <hr className="my-2" />
           </div>
           <Login onLogin={handleLogin} />
-          <div className="flex items-center justify-arround mt-4">
+          <div className="flex items-center mt-4 justify-arround">
             <span className="mr-[5px]">Je n'ai pas de compte,</span>
             <Link href="/auth/register" legacyBehavior>
               <a className="text-sm text-blue-600 hover:underline">

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { postData } from '@/lib/utils';
 
 export default function Login({ onLogin }) {
   const [email, setEmail] = useState('');
