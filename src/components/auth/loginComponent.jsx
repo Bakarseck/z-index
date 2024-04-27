@@ -12,13 +12,13 @@ export default function Login({ onLogin }) {
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
-      <div>
+      <div className='text-white'>
         <input
           type="email"
           placeholder="Pseudo/email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 py-2 rounded"
+          className="w-full px-4 py-2 rounded-[12px] bg-gray-500"
         />
       </div>
       <div>
@@ -27,7 +27,7 @@ export default function Login({ onLogin }) {
           placeholder="Mot de passe"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-4 py-2 rounded"
+          className="w-full px-4 py-2 rounded-[12px] bg-gray-500"
         />
       </div>
       <div>
@@ -35,7 +35,7 @@ export default function Login({ onLogin }) {
           type="submit"
           className="flex items-center justify-center w-full px-4 py-2 rounded"
         >
-          <i className="mr-2 fas fa-sign-in-alt"></i>Se connecter
+         <img src="../assets/loginBtn.png" className='w-[200px] h-[50px]'  />
         </button>
       </div>
     </form>

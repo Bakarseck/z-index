@@ -2,11 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Login from "@/components/auth/loginComponent";
+import Navbar from "@/components/common/Navbar";
 import { toast } from "react-toastify";
 import { postData } from "@/lib/utils";
 import { setSessionToken } from "@/lib/cookie";
 import { useRouter } from "next/navigation";
 import { useSession } from "@/lib/useSession";
+import Footer from "@/components/common/Footer";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -38,25 +40,20 @@ export default function LoginPage() {
       <Head>
         <title>Login - Daaray Kocc</title>
       </Head>
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-300 via-red-200 to-yellow-100">
-        <div className="w-full max-w-xs p-6 bg-white rounded-lg shadow-md">
+      <Navbar/>
+
+      <div className="flex items-center justify-center min-h-screen ">
+        <div className="w-[500px] p-6 bg-glass border-2 border-yellow-300 rounded-lg shadow-md">
+          
           <div className="mb-4">
-            <Image
-              src="/path/to/logo.png"
-              alt="Daaray Kocc logo"
-              width={200}
-              height={50}
-            />
-          </div>
-          <div className="mb-4">
-            <h2 className="text-lg font-bold text-center">
+            <h2 className="text-lg font-bold text-center  text-white text-[24px]" style={{ fontFamily: "Kavoon, cursive" }}>
               Ravi de te revoir !
             </h2>
             <hr className="my-2" />
           </div>
           <Login onLogin={handleLogin} />
-          <div className="flex items-center justify-between mt-4">
-            <span>Je n'ai pas de compte,</span>
+          <div className="flex items-center justify-arround mt-4">
+            <span className="mr-[5px]">Je n'ai pas de compte,</span>
             <Link href="/auth/register" legacyBehavior>
               <a className="text-sm text-blue-600 hover:underline">
                 je m'inscris
@@ -65,6 +62,7 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
