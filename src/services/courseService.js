@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma"; // Ensure the import path is correct
+import prisma from "@/lib/prisma";
 
 // Create a new course
 async function createCourse(data) {

@@ -4,6 +4,9 @@
 dev:
 	npx next dev
 
+install:
+	@npm install
+
 # Build the production version
 build:
 	npx next build
