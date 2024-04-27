@@ -1,10 +1,16 @@
 import { useSession } from "@/lib/useSession";
 import Head from "next/head";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
-  const user = useSession();
 
+  const user = useSession();
+  const router = useRouter();
+  
+  if (user) {
+    router.push('/home');
+  }
+  
   return (
     <>
       <Head>
@@ -14,12 +20,12 @@ export default function HomePage() {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         />
       </Head>
-      <div className="min-h-screen font-sans bg-gradient-to-r from-blue-300 via-red-200 to-yellow-100">
+      <div className="min-h-screen font-sans w-[90%] m-[5%] border-2 border-yellow-300  bg-opacity-10 shadow-lg backdrop-blur-100  rounded-lg">
         <header className="flex items-center justify-between px-6 py-4">
           <img
-            src="https://placehold.co/200x50.png"
-            alt="Daaray Kocc logo placeholder"
-            className="h-12"
+            src="assets/logo-daaraayKocc.png"
+            alt="Daaray Kocc"
+            className="h-[100px]"
           />
           <nav>
             <ul className="flex space-x-4">
@@ -29,25 +35,21 @@ export default function HomePage() {
                 </a>
               </li>
               <li>
-                <Link href="/auth/login" legacyBehavior>
-                  <a className="text-yellow-500 hover:text-yellow-600">
-                    Connexion
-                  </a>
-                </Link>
+                <a href="#" className="text-yellow-500 hover:text-yellow-600">
+                  Connexion
+                </a>
               </li>
               <li>
-                <Link href="/auth/register" legacyBehavior>
-                  <a className="text-yellow-500 hover:text-yellow-600">
-                    Register
-                  </a>
-                </Link>
+                <a href="#" className="text-yellow-500 hover:text-yellow-600">
+                  Inscription
+                </a>
               </li>
             </ul>
           </nav>
         </header>
 
         <main className="flex items-center justify-center h-screen">
-          <div className="p-6 mr-10 text-black bg-yellow-400 rounded-lg shadow-lg">
+          <div className="p-6 mr-10 text-black bg-yellow-400 rounded-lg shadow-lg w-[500px]">
             <h2 className="mb-2 text-2xl font-bold">TEXT</h2>
             <p className="mb-4">TEXT</p>
             <p className="text-sm">
@@ -60,15 +62,14 @@ export default function HomePage() {
             </button>
           </div>
 
-          <div className="p-6 text-black bg-yellow-200 rounded-lg shadow-lg">
-            <p className="mb-2 text-2xl font-bold">IMAGE</p>
+          <div className="p-6 text-black rounded-lg shadow-md">
+            <img src="assets/landing.PNG" className="rounded-lg w-96" />
           </div>
         </main>
-
-        <footer className="py-6 text-xs text-center text-gray-600">
-          ©2024 - daaraay kocc <i className="text-red-500 fas fa-heart"></i>
-        </footer>
       </div>
+      <footer className="py-6 text-xs text-center text-white">
+        ©2024 - daaraay kocc <i className="text-red-500 fas fa-heart"></i>
+      </footer>
     </>
   );
 }
