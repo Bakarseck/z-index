@@ -19,14 +19,14 @@ export default function Register({ onRegister }) {
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 text-white">
         <input
           type="text"
           name="firstName" // Make sure to set the 'name' prop
           placeholder="Prénom(s)"
           value={form.firstName}
           onChange={handleInputChange}
-          className="w-full px-4 py-2 rounded"
+          className="w-full px-4 py-2 rounded-[12px]  bg-gray-500 "
         />
         <input
           type="text"
@@ -34,7 +34,7 @@ export default function Register({ onRegister }) {
           placeholder="Nom"
           value={form.lastName}
           onChange={handleInputChange}
-          className="w-full px-4 py-2 rounded"
+          className="w-full px-4 py-2 rounded-[12px] bg-gray-500"
         />
       </div>
       <input
@@ -43,7 +43,7 @@ export default function Register({ onRegister }) {
         placeholder="Pseudo"
         value={form.username}
         onChange={handleInputChange}
-        className="w-full px-4 py-2 rounded"
+        className="w-full px-4 py-2 rounded-[12px] bg-gray-500"
       />
       <input
         type="email"
@@ -51,7 +51,7 @@ export default function Register({ onRegister }) {
         placeholder="Email"
         value={form.email}
         onChange={handleInputChange}
-        className="w-full px-4 py-2 rounded"
+        className="w-full px-4 py-2 rounded-[12px] bg-gray-500"
       />
       <input
         type="password"
@@ -59,13 +59,13 @@ export default function Register({ onRegister }) {
         placeholder="Mot de passe"
         value={form.password}
         onChange={handleInputChange}
-        className="w-full px-4 py-2 rounded"
+        className="w-full px-4 py-2 rounded-[12px] bg-gray-500"
       />
       <button
         type="submit"
-        className="w-full px-4 py-2 text-white bg-orange-500 rounded-full hover:bg-orange-600"
+        className="w-full px-4 py-2 bg-content text-white justify-center flex "
       >
-        Je m'inscris
+        <img src='../assets/registerFormBtn.png' className='w-[200px] h-[50px]' />
       </button>
     </form>
   );
