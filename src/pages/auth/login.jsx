@@ -21,7 +21,7 @@ export default function LoginPage() {
       if (response.error) {
         toast.error(response.error);
       } else {
-        toast.success("Registration successful!");
+        toast.success("Login successful!");
         console.log(response.token);
         setSessionToken(response.token);
         setTimeout(() => {
