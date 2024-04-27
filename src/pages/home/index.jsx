@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useSession } from "@/lib/useSession";
 import Image from "next/image";
 import DateComponent from "@/components/common/DateComponent";
+import CardContainer from "@/components/common/Rubriques";
 
 export default function UserDashboard() {
   const user = useSession();
@@ -37,11 +38,9 @@ export default function UserDashboard() {
             Se déconnecter
           </button>
         </div>
-
-        <div className="grid max-w-4xl grid-cols-2 gap-4 mx-auto mt-10">
-          <div className="p-6 bg-yellow-200 rounded-lg shadow-md">
-            <h3 className="text-lg font-bold">Histoire</h3>
-          </div>
+        
+        <div className="flex ml-[15%] mt-20 bg-red-200 w-[70%] h-[50vh]">
+            <CardContainer />
         </div>
 
         <footer className="py-6 text-xs text-center text-gray-600">

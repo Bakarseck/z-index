@@ -1,34 +1,28 @@
+import Image from "next/image";
+import { useState, useEffect } from "react";
+
 export default function DateComponent() {
-    // Create a new Date object for the current date
+  const [dateInfo, setDateInfo] = useState({ dayOfWeek: '', dayOfMonth: '', month: '' });
+
+  useEffect(() => {
     const currentDate = new Date();
-  
-    // Define arrays for Wolof month and weekday names
-    const months = ["Samwiye", "Fewriye", "Mars", "Awril", "Mee", "Suwe", "Sulet", "Ut", "Sattumbar", "Oktoobar", "Noowambar", "Desambar"];
-    const weekdays = ["Dibéer", "Altine", "Talaata", "Àlarba", "Alxamis", "Àjjuma", "Gàddu"];
-  
-    // Get the day of the week, day of the month, and month from the currentDate
-    const dayOfWeek = weekdays[currentDate.getDay()];
+    const dayOfWeek = ["Dibéer", "Altine", "Talaata", "Àlarba", "Alxamis", "Àjjuma", "Gàwwu"][currentDate.getDay()];
     const dayOfMonth = currentDate.getDate();
-    const month = months[currentDate.getMonth()];
-  
-    // Construct the full date string in Wolof
-    const fullDateString = `${dayOfWeek}, ${dayOfMonth} ${month}`;
-  
-    return (
-      <div>
-        
-        <div
-          className="p-2 bg-red-200 rounded-full"
-          style={{
-            backgroundImage: "url('/assets/date-background.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <p className="text-lg">{dayOfMonth}</p> 
-        </div>
+    const month = ["Samwiye", "Fewriye", "Mars", "Awril", "Mee", "Suwe", "Sulet", "Ut", "Sattumbar", "Oktoobar", "Noowambar", "Desambar"][currentDate.getMonth()];
+
+    setDateInfo({ dayOfWeek, dayOfMonth, month });
+  }, []);
+
+  return (
+    <div className="relative p-2 rounded-full">
+      <div className="absolute top-0 left-0 z-0 w-full h-full overflow-hidden rounded-full">
+        <Image src="/assets/date-background.png" alt="Date background" layout="fill" objectFit="cover" />
       </div>
-    );
-  }
-  
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-black">
+        <span className="text-xs font-bold tracking-wider uppercase">{dateInfo.dayOfWeek}</span>
+        <span className="text-4xl font-bold">{dateInfo.dayOfMonth}</span>
+        <span className="text-sm uppercase">{dateInfo.month}</span>
+      </div>
+    </div>
+  );
+}
