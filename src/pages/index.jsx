@@ -5,10 +5,6 @@ import Link from "next/link";
 export default function HomePage() {
   const user = useSession();
 
-  if (!user) {
-    return 
-  }
-
   return (
     <>
       <Head>
