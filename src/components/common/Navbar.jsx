@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Navbar() {
@@ -15,19 +16,21 @@ export default function Navbar() {
             style={{ fontFamily: "Kavoon, cursive" }}
           >
             <li>
-              <a href="#" className="text-white hover:text-yellow-300">
-                À propos de nous
-              </a>
+              <Link href="/about" legacyBehavior>
+                <a className="text-white hover:text-yellow-300">
+                  À propos de nous
+                </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="text-white hover:text-yellow-300">
-                Connexion
-              </a>
+              <Link href="/auth/login" legacyBehavior>
+                <a className="text-white hover:text-yellow-300">Connexion</a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="text-white hover:text-yellow-300">
-                Inscription
-              </a>
+              <Link href="/auth/register" legacyBehavior>
+                <a className="text-white hover:text-yellow-300">Inscription</a>
+              </Link>
             </li>
           </ul>
         </nav>
