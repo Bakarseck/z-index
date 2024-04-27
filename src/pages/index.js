@@ -10,7 +10,7 @@ export default function HomePage() {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         />
       </Head>
-      <div className="min-h-screen font-sans w-[90%] m-[5%] border-2 border-yellow-300 rounded-lg">
+      <div className="min-h-screen font-sans w-[90%] m-[5%] border-2 border-yellow-300  bg-opacity-10 shadow-lg backdrop-blur-100  rounded-lg">
         <header className="flex items-center justify-between px-6 py-4">
           <img
             src="assets/logo-daaraayKocc.png"
@@ -52,8 +52,8 @@ export default function HomePage() {
             </button>
           </div>
 
-          <div className="p-6 text-black rounded-lg shadow-lg">
-            <img src="assets/landing.PNG" className="w-96" />
+          <div className="p-6 text-black rounded-lg shadow-md">
+            <img src="assets/landing.PNG" className="w-96 rounded-lg" />
           </div>
         </main>
       </div>
