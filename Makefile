@@ -8,7 +8,7 @@ install:
 	@npm install
 
 # Build the production version
-build: prisma-generate
+build: prisma-generate migrate-dev
 	npx next build
 
 # Start the production server
