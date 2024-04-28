@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 export default function HomePage() {
 
-    const user = useSession();
+    const user= useSession();
     const router = useRouter();
 
     if (user) {

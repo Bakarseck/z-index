@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import Layout from "@/components/layout/layoutGame";
-import { crosswordState, crosswordGridState, scoreState } from '@/states/game';
+import { crosswordState, crosswordGridState, scoreState, crosswordClues, initialGrid } from '@/states/crossword';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { toast } from 'react-toastify';
 import Timer from '@/components/common/Timer';
 import Score from '@/components/common/Score';
 import { useRouter } from 'next/router';
-import { crosswordClues } from '@/states/game';
-import { initialGrid } from '@/states/game';
 
 export default function CrossWord() {
     const [cluesState, setCluesState] = useRecoilState(crosswordState);

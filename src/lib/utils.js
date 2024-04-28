@@ -25,7 +25,6 @@ export const postData = async (url, data) => {
     }
 };
 
-
 export const getData = async (url, params = {}) => {
     try {
         const query = new URLSearchParams(params).toString();

@@ -11,9 +11,14 @@ import { useSession } from "@/lib/useSession";
 import Footer from "@/components/common/Footer";
 
 export default function LoginPage() {
-  const router = useRouter();
+    
+    const [user, isConnected] = useSession();
+    const router = useRouter();
 
-  const user = useSession();
+    if (!isConnected) {
+        router.push('/');
+        return;
+    }
     
   const handleLogin = async (data) => {
     try {
