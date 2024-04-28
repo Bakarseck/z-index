@@ -3,17 +3,17 @@ import Footer from "../common/Footer";
 import CardProfile from "../users/CardProfile";
 
 export default function Layout({ children }) {
-    const user = useSession();
+  const user = useSession();
 
-    if (!user) {
-        return <p>Loading...</p>;
-    }
+  if (!user) {
+    return <p>Loading...</p>;
+  }
 
-    return (
-        <>
-            <CardProfile user={user} />
-            <main>{children}</main>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <CardProfile user={user} />
+      <main>{children}</main>
+      <Footer />
+    </>
+  );
 }

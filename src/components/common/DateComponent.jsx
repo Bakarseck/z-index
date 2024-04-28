@@ -39,23 +39,25 @@ export default function DateComponent() {
   }, []);
 
   return (
-    <div className="relative p-2 rounded-full">
-      <div className="absolute top-0 left-0 z-0 w-full h-full overflow-hidden rounded-full">
+    <div className="relative p-2 font-kavoon">
+      {/* <div className="absolute top-0 left-0 z-0 w-full h-full overflow-hidden rounded-full">
         <Image
           src="/assets/date-background.png"
           alt="Date background"
           layout="fill"
           objectFit="cover"
         />
-      </div>
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-black">
-        <span className="mt-5 text-xs font-bold tracking-wider text-white uppercase">
+      </div> */}
+      <div className="relative  flex flex-col items-center justify-center text-center">
+        <span className="mt-5 text-[20px] font-bold tracking-wider text-white uppercase">
           {dateInfo.dayOfWeek}
         </span>
-        <span className="text-4xl font-bold text-white">
-          {dateInfo.dayOfMonth}
-        </span>
-        <span className="text-sm text-white uppercase">{dateInfo.month}</span>
+        <div className="bg-dateImg w-[80px] h-[80px] flex justify-center bg-cover items-center rounded-full">
+          <span className="text-[30px] ml-2 font-bold text-white ">
+            {dateInfo.dayOfMonth}
+          </span>
+        </div>
+        <span className="text-[24px] text-white uppercase">{dateInfo.month}</span>
       </div>
     </div>
   );
