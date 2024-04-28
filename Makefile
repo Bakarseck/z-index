@@ -8,8 +8,8 @@ install:
 	@npm install
 
 # Build the production version
-build:
-	npx prisma migrate deploy
+build: prisma-generate migrate-dev
+	npx prisma deploy
 	npx next build
 
 # Start the production server
