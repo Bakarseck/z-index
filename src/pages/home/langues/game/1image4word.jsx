@@ -12,11 +12,11 @@ import { toast } from 'react-toastify';
 const QuizComponent = () => {
     const [quizData, setQuizData] = useRecoilState(quizDataState);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const setScore = useSetRecoilState(scoreState);
+    const [score, setScore] = useRecoilState(scoreState);
     const router = useRouter();
 
     const showSuccessToast = () => {
-        toast.success("Vous avez gagné", {
+        toast.success(`Vous avez ${score} points`, {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,
@@ -78,10 +78,10 @@ const QuizComponent = () => {
                 <Image
                     src={currentData.imageUrl}
                     alt={`Question ${currentImageIndex + 1}`}
-                    width={200}
-                    height={200}
+                    width={180}
+                    height={180}
                     priority={currentImageIndex === 0}
-                    className='mb-5 rounded-xl'
+                    className='mt-6 mb-5 rounded-xl'
                 />
 
             </div>

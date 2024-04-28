@@ -150,7 +150,7 @@ export default function CrossWord() {
                 <Score score={0} />
             </div>
             <div className="flex items-center justify-center max-w-4xl mx-auto my-10">
-                <div className="grid grid-cols-10 gap-1">
+                <div className="grid grid-cols-11 gap-1">
                     {grid.map((row, rowIndex) => (
                         row.map((cell, colIndex) => (
                             <input
@@ -158,7 +158,7 @@ export default function CrossWord() {
                                 id={`cell-${rowIndex}-${colIndex}`}
                                 type="text"
                                 maxLength="1"
-                                className={`w-8 h-8 text-base text-center font-kavoon text-secondary ${cell !== '0' ? 'bg-white' : 'bg-transparent'}`}
+                                className={`w-7 h-7 text-base text-center font-kavoon text-secondary ${cell !== '0' ? 'bg-white' : 'bg-transparent'}`}
                                 onKeyDown={(e) => handleKeyDown(e, rowIndex, colIndex)}
                                 onChange={(e) => handleInputChange(e, rowIndex, colIndex, cell)}
                                 value={cell === '0' ? '' : cell.replace(/[^A-Z]/g, '')}
@@ -170,7 +170,7 @@ export default function CrossWord() {
                 <div className="my-4 max-w-[40%]">
                     <div className="ml-10">
                         {Object.values(cluesState).map(clue => (
-                            <p key={clue.number} className={`mt-2 text-base font-kavoon text-secondary ${clue.isAnsweredCorrectly ? 'line-through' : ''}`}>
+                            <p key={clue.number} className={`mt-2 text-sm font-kavoon text-secondary ${clue.isAnsweredCorrectly ? 'line-through' : ''}`}>
                                 {clue.number}. {clue.question}
                             </p>
                         ))}

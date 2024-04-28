@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
-import { getSessionToken } from './cookie';
-import { useState, useEffect } from 'react';
+import jwt from "jsonwebtoken";
+import { getSessionToken } from "./cookie";
+import { useState, useEffect } from "react";
 
 export const useSession = () => {
   const token = getSessionToken();
