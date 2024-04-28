@@ -15,6 +15,9 @@ build:
 start:
 	npx next start
 
+move:
+	mv ~/Downloads/$(name).png public/assets
+
 # Generate Prisma client
 prisma-generate:
 	npx prisma generate

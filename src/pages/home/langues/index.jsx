@@ -13,24 +13,24 @@ export default function Home() {
     return (
         <Layout>
             <div className="flex flex-col items-center justify-center h-full">
-                <h1 className="mt-10 mb-6 text-4xl font-bold text-secondary font-kavoon">Histoire</h1>
+                <h1 className="mt-10 mb-6 text-4xl font-bold text-secondary font-kavoon">Langues</h1>
 
-                <div className="flex ml-[30%] mt-10 w-[70%] h-[30vh] gap-20">
-                    <Link href="/home/histoire/cours" legacyBehavior>
+                <div className="flex ml-[30%] mt-10 w-[70%] h-[20vh] gap-20">
+                    <Link href="/home/langues/cours" legacyBehavior>
                         <a className="transition duration-300 ease-in-out transform hover:scale-105">
                             <Image
-                                src="/assets/cours.png"
+                                src="/assets/decouverte_langue.png"
                                 alt="Cours"
-                                width={200}
-                                height={200}
+                                width={250}
+                                height={250}
                             />
                         </a>
                     </Link>
 
-                    <Link href="/home/histoire/game" legacyBehavior>
+                    <Link href="/home/langues/game" legacyBehavior>
                         <a className="transition duration-300 ease-in-out transform hover:scale-105">
                             <Image
-                                src="/assets/game.png"
+                                src="/assets/game_langue.png"
                                 alt="Jeux"
                                 width={200}
                                 height={200}

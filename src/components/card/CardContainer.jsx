@@ -1,6 +1,7 @@
 // components/CardContainer.js
 import Link from "next/link";
 import Card from "./CardComponent";
+import Image from "next/image";
 
 export default function CardContainer() {
     // Data for the cards, replace the placeholder image paths with the actual paths
@@ -18,7 +19,7 @@ export default function CardContainer() {
             gradient: "from-blue-400 to-purple-400",
         },
         {
-            title: "Géographie",
+            title: "Geographie",
             image: "/assets/geographie.png",
             locked: true,
             gradient: "from-green-400 to-yellow-400",
@@ -36,15 +37,17 @@ export default function CardContainer() {
             <div className="grid max-w-6xl grid-cols-4 gap-4 p-4 mx-auto">
                 {cards.map((card, index) => (
                     <Link href={`/home/${card.title.toLowerCase()}`} key={index} legacyBehavior>
-                        <a className="block transition duration-500 transform hover:scale-105">
-                            <Card
-                                title={card.title}
-                                image={card.image}
-                                locked={card.locked}
-                                gradient={card.gradient}
+                        <a className="transition duration-300 ease-in-out transform hover:scale-105">
+                            <Image
+                                src={card.image}
+                                alt={`Cover image for ${card.title}`}
+                                width={275}
+                                height={400}
+                                className="rounded-lg"
                             />
                         </a>
                     </Link>
+
                 ))}
             </div>
         </div>
