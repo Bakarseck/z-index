@@ -11,15 +11,14 @@ import { useSession } from "@/lib/useSession";
 import Footer from "@/components/common/Footer";
 
 export default function LoginPage() {
-    
-    const [user, isConnected] = useSession();
-    const router = useRouter();
+  const user = useSession();
+  const router = useRouter();
 
-    if (!isConnected) {
-        router.push('/');
-        return;
-    }
-    
+  if (user) {
+    router.push("/home");
+    return;
+  }
+
   const handleLogin = async (data) => {
     try {
       const response = await postData("/api/auth/login", data);
@@ -30,8 +29,8 @@ export default function LoginPage() {
         console.log(response.token);
         setSessionToken(response.token);
         setTimeout(() => {
-            router.push('/home');
-        }, 1000)
+          router.push("/home");
+        }, 1000);
       }
     } catch (error) {
       console.log(error.message);
@@ -40,7 +39,7 @@ export default function LoginPage() {
   };
 
   if (user) {
-    router.push('/');
+    router.push("/");
   }
 
   return (
@@ -48,13 +47,15 @@ export default function LoginPage() {
       <Head>
         <title>Login - Daaray Kocc</title>
       </Head>
-      <Navbar/>
+      <Navbar />
 
       <div className="flex items-center justify-center min-h-screen ">
         <div className="w-[500px] p-6 bg-glass border-2 border-yellow-300 rounded-lg shadow-md">
-          
           <div className="mb-4">
-            <h2 className="text-lg font-bold text-center  text-white text-[24px]" style={{ fontFamily: "Kavoon, cursive" }}>
+            <h2
+              className="text-lg font-bold text-center  text-white text-[24px]"
+              style={{ fontFamily: "Kavoon, cursive" }}
+            >
               Ravi de te revoir !
             </h2>
             <hr className="my-2" />
@@ -70,7 +71,7 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
