@@ -12,7 +12,7 @@ export default function Home() {
                 </p>
                 <div className="flex justify-center">
                     <div className="relative inline-block w-32 h-32 transition-transform duration-300 ease-in-out cursor-pointer md:w-48 md:h-48 hover:scale-110">
-                        <Link href="/home/histoire/game/crossword" legacyBehavior>
+                        <Link href="/home/langues/game/1image4word" legacyBehavior>
                             <a >
                                 <Image
                                     src="/assets/playButton.png"
