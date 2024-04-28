@@ -8,12 +8,15 @@ install:
 	@npm install
 
 # Build the production version
-build: prisma-generate migrate-dev
+build: prisma-generate migrate-deploy
 	npx next build
 
 # Start the production server
 start:
 	npx next start
+
+migrate-deploy:
+    npx prisma migrate deploy
 
 move:
 	mv ~/Downloads/$(name).png public/assets
