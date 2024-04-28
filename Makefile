@@ -9,7 +9,7 @@ install:
 
 # Build the production version
 build:
-	npx prisma deploy
+	npx prisma migrate deploy
 	npx next build
 
 # Start the production server
