@@ -158,10 +158,10 @@ export default function CrossWord() {
                                 id={`cell-${rowIndex}-${colIndex}`}
                                 type="text"
                                 maxLength="1"
-                                className={`w-7 h-7 text-base text-center font-kavoon text-secondary ${cell !== '0' ? 'bg-white' : 'bg-transparent'}`}
+                                className={`w-7 h-7 text-base text-center font-kavoon text-secondary placeholder-gray-400 ${cell !== '0' ? 'bg-white' : 'bg-transparent'}`}
                                 onKeyDown={(e) => handleKeyDown(e, rowIndex, colIndex)}
                                 onChange={(e) => handleInputChange(e, rowIndex, colIndex, cell)}
-                                value={cell === '0' ? '' : cell.replace(/[^A-Z]/g, '')}
+                                placeholder={cell.includes('-') ? `${cell.charAt(2)}` : cell.replace(/[^A-Z]/g, '')}
                                 disabled={cell === '0'}
                             />
                         ))
